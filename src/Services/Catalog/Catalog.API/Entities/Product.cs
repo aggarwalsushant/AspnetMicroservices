@@ -5,7 +5,7 @@ namespace Catalog.API.Entities;
 public class Product
 {
   [BsonId]
-  [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
+  [BsonRepresentation(BsonType.ObjectId)]
   public string Id { get; set; }
 
   [BsonElement("Name")]
