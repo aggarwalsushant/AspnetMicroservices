@@ -28,7 +28,7 @@ public class CatalogController : ControllerBase
     return Ok(products);
   }
 
-  [HttpGet(template: "{id: Length(24)}", Name = "GetProduct")] //ensure param name and the keyword matches
+  [HttpGet(template: "{id:Length(24)}", Name = "GetProduct")] //ensure param name and the keyword matches
   [ProducesResponseType(200)]
   [ProducesResponseType((int)HttpStatusCode.NotFound)] // another way of writing 404 - makes more intuitive.
   public async Task<ActionResult<Product>> GetProductById(string id)
@@ -80,7 +80,7 @@ public class CatalogController : ControllerBase
     return Ok(await _repository.UpdateProduct(product));
   }
 
-  [HttpDelete(template: "{id: Length(24)}", Name = "DeleteProduct")]
+  [HttpDelete(template: "{id:Length(24)}", Name = "DeleteProduct")]
   [ProducesResponseType((int)HttpStatusCode.OK)]
   public async Task<IActionResult> DeleteProductById(string id)
   {
